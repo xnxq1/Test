@@ -8,5 +8,5 @@ from API.models import Exercises
 
 
 class ExerciseViewSet(viewsets.ModelViewSet):
-    queryset = Exercises.objects.all()
+    queryset = Exercises.objects.all().prefetch_related('type')
     serializer_class = ExerciseSerializer
