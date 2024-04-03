@@ -16,9 +16,9 @@ class Type(models.Model):
 
 class Exercises(models.Model):
     DIFFICULT_CHOICES = (
-        ('beginner', 'Начинающий'),
-        ('medium', 'Средний'),
-        ('advanced', 'Продвинутый'))
+        ('Начинающий', 'Начинающий'),
+        ('Средний', 'Средний'),
+        ('Продвинутый', 'Продвинутый'))
     name = models.CharField(max_length=255, verbose_name='Название', unique=True)
     description = models.TextField(max_length=500, verbose_name='Описание')
     type = models.ForeignKey(Type, on_delete=models.PROTECT, verbose_name='Тип упражнения')
