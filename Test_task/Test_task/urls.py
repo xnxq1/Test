@@ -32,3 +32,4 @@ router = routers.DefaultRouter()
 router.register(r'exercises', ExerciseViewSet)
 urlpatterns += router.urls
 
+

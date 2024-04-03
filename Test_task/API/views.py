@@ -17,11 +17,11 @@ class ExerciseViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         self.queryset = super().get_queryset()
-        type = self.request.GET.get('type', None)
+        type_name = self.request.GET.get('type', None)
         difficult = self.request.GET.get('difficult', None)
 
-        if type:
-            self.queryset = self.queryset.filter(type_id__name=type)
+        if type_name:
+            self.queryset = self.queryset.filter(type_id__name=type_name)
 
         if difficult:
             self.queryset = self.queryset.filter(difficult=difficult)
